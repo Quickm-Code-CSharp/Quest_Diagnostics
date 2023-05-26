@@ -32,43 +32,61 @@ namespace WpfApp2
 
         private void CommandBindingNew_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
-            args.CanExecute = true;
+            CommandBindingBase_CanExecute(sender, args);
         }
         private void CommandBindingNew_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            MessageBox.Show("New MenuItem Clicked.");
+            CommandBindingBase_Executed(sender, args);
         }
         private void CommandBindingOpen_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
-            args.CanExecute = true;
+            CommandBindingBase_CanExecute(sender, args);
         }
         private void CommandBindingOpen_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            MessageBox.Show("Open MenuItem Clicked.");
+            CommandBindingBase_Executed(sender, args);
         }
         private void CommandBindingCopy_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
-            args.CanExecute = true;
+            CommandBindingBase_CanExecute(sender, args);
+
         }
         private void CommandBindingCopy_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            MessageBox.Show("Copy MenuItem Clicked.");
+            CommandBindingBase_Executed(sender, args);
         }
         private void CommandBindingCut_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
-            args.CanExecute = true;
+            CommandBindingBase_CanExecute(sender, args);
         }
         private void CommandBindingCut_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            MessageBox.Show("Cut MenuItem Clicked.");
+            CommandBindingBase_Executed(sender, args);
         }
         private void CommandBindingPaste_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
-            args.CanExecute = true;
+            CommandBindingBase_CanExecute(sender, args);
+
         }
         private void CommandBindingPaste_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            MessageBox.Show("Cut MenuItem Clicked.");
+            CommandBindingBase_Executed(sender, args);
+        }
+
+        private void CommandBindingBase_CanExecute(object sender, CanExecuteRoutedEventArgs args)
+        {
+            args.CanExecute = true;
+        }
+
+        private void CommandBindingBase_Executed(object sender, ExecutedRoutedEventArgs args)
+        {
+            var menuItem = args.OriginalSource as MenuItem;
+
+            if (menuItem != null)
+            {
+                string menuItemName = menuItem.Header.ToString();
+                MessageBox.Show($"{menuItemName} MenuItem Clicked.");
+            }
         }
     }
 }
