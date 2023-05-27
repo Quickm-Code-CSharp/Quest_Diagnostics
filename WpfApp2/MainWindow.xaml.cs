@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfApp2
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,6 +12,10 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new ExitCommandContext();
+
+            
+            
         }
 
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
@@ -36,7 +29,7 @@ namespace WpfApp2
         }
         private void CommandBindingNew_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            CommandBindingBase_Executed(sender, args);
+            CommandBindingBase_Executed("New");
         }
         private void CommandBindingOpen_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
@@ -44,7 +37,7 @@ namespace WpfApp2
         }
         private void CommandBindingOpen_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            CommandBindingBase_Executed(sender, args);
+            CommandBindingBase_Executed("Open");
         }
         private void CommandBindingCopy_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
@@ -53,7 +46,7 @@ namespace WpfApp2
         }
         private void CommandBindingCopy_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            CommandBindingBase_Executed(sender, args);
+            CommandBindingBase_Executed("Copy");
         }
         private void CommandBindingCut_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
@@ -61,7 +54,7 @@ namespace WpfApp2
         }
         private void CommandBindingCut_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            CommandBindingBase_Executed(sender, args);
+            CommandBindingBase_Executed("Cut");
         }
         private void CommandBindingPaste_CanExecute(object sender, CanExecuteRoutedEventArgs args)
         {
@@ -70,7 +63,7 @@ namespace WpfApp2
         }
         private void CommandBindingPaste_Executed(object sender, ExecutedRoutedEventArgs args)
         {
-            CommandBindingBase_Executed(sender, args);
+            CommandBindingBase_Executed("Paste");
         }
 
         private void CommandBindingBase_CanExecute(object sender, CanExecuteRoutedEventArgs args)
@@ -78,15 +71,9 @@ namespace WpfApp2
             args.CanExecute = true;
         }
 
-        private void CommandBindingBase_Executed(object sender, ExecutedRoutedEventArgs args)
+        private void CommandBindingBase_Executed(string header)
         {
-            var menuItem = args.OriginalSource as MenuItem;
-
-            if (menuItem != null)
-            {
-                string menuItemName = menuItem.Header.ToString();
-                MessageBox.Show($"{menuItemName} MenuItem Clicked.");
-            }
+                MessageBox.Show($"{header} MenuItem Clicked.");
         }
     }
 }
