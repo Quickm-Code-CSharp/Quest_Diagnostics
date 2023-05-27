@@ -95,5 +95,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\business-man1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ryan-gosling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\gray_hair_man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\2515.png" />
+    <Resource Include="Images\little-girl-smiling.png" />
+    <Resource Include="Images\young-girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blonde.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

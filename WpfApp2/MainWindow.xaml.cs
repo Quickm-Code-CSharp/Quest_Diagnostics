@@ -13,9 +13,7 @@ namespace WpfApp2
         {
             InitializeComponent();
             this.DataContext = new ExitCommandContext();
-
-            
-            
+            this.TestList.Visibility = Visibility.Hidden;
         }
 
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
@@ -73,7 +71,17 @@ namespace WpfApp2
 
         private void CommandBindingBase_Executed(string header)
         {
-                MessageBox.Show($"{header} MenuItem Clicked.");
+            MessageBox.Show($"{header} MenuItem Clicked.");
+        }
+
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.TestList.Visibility = Visibility.Visible;
+        }
+
+        private void Image_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.TestList.Visibility = Visibility.Hidden;
         }
     }
 }

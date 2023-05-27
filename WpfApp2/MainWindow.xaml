@@ -21,20 +21,59 @@
         <KeyBinding Key="X" Modifiers="Ctrl" Command="Cut" />
         <KeyBinding Key="V" Modifiers="Ctrl" Command="Paste" />
     </Window.InputBindings>
+
     <Grid>
-        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Height="20"  Width="111">
-            <MenuItem Header="File" Height="20" Width="49">
-                <MenuItem Command="New"  Height="20" Width="150" />
-                <MenuItem Command="Open" Height="20" Width="150" />
-                <Separator HorizontalAlignment="Left"  Height="1" Width="150"/>
-                <MenuItem x:Name="MenuItemExit" InputGestureText="Ctrl+Q"  Header="Exit" Height="20" Width="150" Click="MenuItemExit_Click"/>
-            </MenuItem>
-            <MenuItem Header="Edit" Height="20" Width="49">
-                <MenuItem Command="Copy" Height="20" Width="150" />
-                <MenuItem Command="Cut" Height="20" Width="150" />
-                <MenuItem Name="menuEditPaste"  Header="Paste"  Command="Paste" Height="20" Width="150" />
-            </MenuItem>
-        </Menu>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Height="20"  Width="111">
+                <MenuItem Header="File" Height="20" Width="49">
+                    <MenuItem Command="New"  Height="20" Width="150" />
+                    <MenuItem Command="Open" Height="20" Width="150" />
+                    <Separator HorizontalAlignment="Left"  Height="1" Width="150"/>
+                    <MenuItem x:Name="MenuItemExit" InputGestureText="Ctrl+Q"  Header="Exit" Height="20" Width="150" Click="MenuItemExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="Edit" Height="20" Width="49">
+                    <MenuItem Command="Copy" Height="20" Width="150" />
+                    <MenuItem Command="Cut" Height="20" Width="150" />
+                    <MenuItem Name="menuEditPaste"  Header="Paste"  Command="Paste" Height="20" Width="150" />
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="1" ShowGridLines="True">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"  HorizontalAlignment="Center" Height="70" Margin="10,10,21.8,20" VerticalAlignment="Center" Width="81" Source="Images/business-man1.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" />
+            <Image Grid.Column="1"  HorizontalAlignment="Center" Height="70" Margin="9.8,10,23.8,20" VerticalAlignment="Center" Width="80" Source="Images/ryan-gosling.png" />
+            <Image Grid.Column="2"  HorizontalAlignment="Center" Height="70" Margin="0,0,0,0" VerticalAlignment="Center" Width="80" Source="Images/gray_hair_man.png"/>
+            <Image Grid.Column="3"  HorizontalAlignment="Center" Height="70" Margin="0,0,0,0" VerticalAlignment="Center" Width="80" Source="Images/2515.png"/>
+            <Image Grid.Column="4"  HorizontalAlignment="Center" Height="70" Margin="0,0,0,0" VerticalAlignment="Center" Width="80" Source="Images/little-girl-smiling.png"/>
+            <Image Grid.Column="5"  HorizontalAlignment="Center" Height="70" Margin="0,0,0,0" VerticalAlignment="Center" Width="80" Source="Images/young-girl.png"/>
+            <Image Grid.Column="6"  HorizontalAlignment="Center" Height="70" Margin="0,0,0,0" VerticalAlignment="Center" Width="80" Source="Images/blonde.jpg"/>
+
+        </Grid>
+        <Grid Grid.Row="2" ShowGridLines="True">
+            <ListView Name="TestList" Margin="25" >
+                <ListViewItem>Test 1</ListViewItem>
+                <ListViewItem IsSelected="True" >Test 2</ListViewItem>
+                <ListViewItem>Test 3</ListViewItem>
+                <ListViewItem>Test 4</ListViewItem>
+                <ListViewItem>Test 5</ListViewItem>
+                <ListViewItem>Test 6</ListViewItem>
+                <ListViewItem>Test 7</ListViewItem>
+            </ListView>
+        </Grid>
+
 
     </Grid>
 </Window>
